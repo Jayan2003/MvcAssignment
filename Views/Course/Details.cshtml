@@ -1,0 +1,14 @@
+@model MvcAssignment.Models.Course
+
+<h2>Course Details</h2>
+
+@if (Model != null)
+{
+    <p>ID: @Model.Id</p>
+    <p>Title: @Model.Title</p>
+    <p>Hours: @Model.Hours</p>
+}
+else
+{
+    <p>Course not found.</p>
+}

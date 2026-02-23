@@ -1,0 +1,36 @@
+@model List<MvcAssignment.Models.Student>
+
+<h2>Students</h2>
+
+<a asp-controller="Student" asp-action="Create" class="btn btn-primary mb-3">
+    Create New Student
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>
+                    <a asp-controller="Student"
+                       asp-action="Details"
+                       asp-route-id="@student.Id"
+                       class="btn btn-info btn-sm">
+                        Details
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
